@@ -1,0 +1,17 @@
+# Error
+title_e404: 404 Not Found
+oops_e404: Oops...
+desc_e404: Looks like something went wrong.</br>We're working on it
+
+# Auth Section
+auth_title: Authentication - Login
+enter_system_auth: Masuk Ke Sistem
+desc_enter_system_auth: "Masukkan Email dan Password Untuk Akses Akun Anda :"
+ph_email_auth: Email atau Username
+ph_password_auth: Password
+enter_btn_auth: Masuk
+forget_password_auth: Lupa Password ?
+remember_auth: Ingat Saya
+
+# Dashboard Section
+dashboard: Masalah Buat Lo

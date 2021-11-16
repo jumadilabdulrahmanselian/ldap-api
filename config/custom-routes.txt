@@ -1,0 +1,5 @@
+en/ads/54f5a06e62f7a/Indian-Food=indian-food-restaurant
+en/show/categoryposts/4/real_estate=real-estates-near-you
+show/categoryposts/10/Gym and Yoga=gym-n-yoga
+show/sitemap=sitemap
+
