@@ -1,12 +1,12 @@
 .DS_Store
 
-app/environment/*
-app/environment/admin/*
-!app/environment/admin/index.html
-app/environment/public/*
-!app/environment/public/index.html
-app/environment/install/*
-!app/environment/install/index.html
+# app/environment/*
+# app/environment/admin/*
+# !app/environment/admin/index.html
+# app/environment/public/*
+# !app/environment/public/index.html
+# app/environment/install/*
+# !app/environment/install/index.html
 
 
 app/cache/*
