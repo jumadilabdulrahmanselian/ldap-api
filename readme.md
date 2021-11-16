@@ -1,5 +1,6 @@
-<p align="center">
 ### Hi there, I'm <a href="https://jumadilabdulrahmanselian.com" target="_blank">Jumadil Abdul Rahman Selian</a> 👋
+
+<p align="center">
 
 [![Website](https://img.shields.io/website?label=jumadilabdulrahmanselian.com&style=for-the-badge&url=https%3A%2F%2Fjumadilabdulrahmanselian.com)](https://jumadilabdulrahmanselian.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jum_a_dil?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fjumadilabdulrahmanselian&screen_name=jum_a_dil)
