@@ -1,0 +1,184 @@
+/*
+-----------------------------
+-- 1. MD_AKSES
+-----------------------------
+*/
+
+INSERT INTO MD_AKSES(KD_AKSES, NM_AKSES, KETERANGAN) VALUES('1', 'ADMIN', '');
+INSERT INTO MD_AKSES(KD_AKSES, NM_AKSES, KETERANGAN) VALUES('2', 'PEGAWAI', '');
+
+/*
+-----------------------------
+-- 2. MD_MENU
+-----------------------------
+*/
+
+-- BEFORE UPDATED
+-- INSERT INTO MD_MENU(KD_MENU, NM_MENU, URUT, NM_LINK, STATUS, LEVEL_MENU, KD_SUBMENU, KETERANGAN) VALUES('MD0001', 'Dashboard', '1', 'dashboard', 'A', '0', '', '');
+-- INSERT INTO MD_MENU(KD_MENU, NM_MENU, URUT, NM_LINK, STATUS, LEVEL_MENU, KD_SUBMENU, KETERANGAN) VALUES('MD0002', 'Master Data', '2', '#', 'A', '0', '', '');
+
+-- DATA FROM DATABASE
+INSERT INTO MD_MENU VALUES('MD0001','MENU NAVIGASI',1,'','A','0','','','');
+INSERT INTO MD_MENU VALUES('MD0002','MASTER DATA',2,'master_data','A','0','','','');
+INSERT INTO MD_MENU VALUES('MD0003','LAPORAN',3,'laporan','A','0','','','');
+INSERT INTO MD_MENU VALUES('MD0004','Dashboard',1,'dashboard','A','1','MD0001','','ri-dashboard-line');
+INSERT INTO MD_MENU VALUES('MD0005','Laporan Bulanan',1,'laporan_bulanan','A','1','MD0003','','ri-git-repository-line');
+INSERT INTO MD_MENU VALUES('MD0006','User Pegawai',2,'user','A','1','MD0002','','ri-shield-user-fill');
+INSERT INTO MD_MENU VALUES('MD0007','Menu',1,'menu','A','1','MD0002','','ri-menu-line');
+INSERT INTO MD_MENU VALUES('MD0008','Dokumen',2,'dokumen','A','1','MD0001','','ri-shield-user-fill');
+INSERT INTO MD_MENU VALUES('MD0009','Master Menu',1,'menu/master','A','2','MD0007','','');
+INSERT INTO MD_MENU VALUES('MD0010','Akses Menu',2,'menu/akses','A','2','MD0007','','');
+INSERT INTO MD_MENU VALUES('MD0011','User Menu',3,'menu/user','A','2','MD0007','','');
+INSERT INTO MD_MENU VALUES('MD0012','Departemen',3,'departemen','A','1','MD0002','','ri-building-line');
+INSERT INTO MD_MENU VALUES('MD0013','Unit',4,'unit','A','1','MD0002','','ri-customer-service-2-line');
+INSERT INTO MD_MENU VALUES('MD0014','Monitoring Dokumen',3,'monitoring','A','1','MD0001','','ri-eye-2-line');
+INSERT INTO MD_MENU VALUES('MD0015','Dokumen Aktif',2,'dokumen/aktif','A','2','MD0008','','');
+INSERT INTO MD_MENU VALUES('MD0016','Dokumen Menunggu Pembaharuan',3,'dokumen/tenggang','A','2','MD0008','','');
+INSERT INTO MD_MENU VALUES('MD0017','Dokumen Kadaluarsa',4,'dokumen/kadaluarsa','A','2','MD0008','','');
+INSERT INTO MD_MENU VALUES('MD0018','Tambah Dokumen',1,'dokumen/tambah','A','2','MD0008','','');
+INSERT INTO MD_MENU VALUES('MD0019','Chat',4,'chat','A','1','MD0001','','ri-message-2-line');
+
+/*
+-----------------------------
+-- 3. MD_DEPARTEMEN
+-----------------------------
+*/
+
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP001','Airport Safety, Risk, and Performance Management Senior Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP002','Legal and Compliance Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP003','Stakeholder Relation Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP004','Airport Operation Center Head','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP005','Airport Operation, Services and Security Senior Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP006','Airport Technical Senior Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP007','Airport Commercial Senior Manager','','A');
+INSERT INTO MD_DEPARTEMEN(KD_DEPARTEMEN, NM_DEPARTEMEN, KETERANGAN, STATUS) VALUES('DP008','Airport Administration Senior Manager','','A');
+
+/*
+-----------------------------
+-- 4. MD_UNIT
+-----------------------------
+*/
+
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN001','DP001','Safety Management System and Occupational Safety Health Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN002','DP001','Quality, Risk and Performance Management Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN003','DP001','Airport Environment Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN004','DP002','Legal and Compliance Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN005','DP003','Stakeholder Relation Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN006','DP004','Airport Operation Center Head','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN007','DP005','Airport Operation Air Side Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN008','DP005','Airport Operation Land Side and Terminal Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN009','DP005','Airport Service Improvement Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN010','DP005','Airport Rescue and Fire Fighting Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN011','DP005','Airport Security Protection Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN012','DP005','Airport Security Screening Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN013','DP006','Airport Facilities Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN014','DP006','Airport Equipment Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN015','DP006','Airport Technology Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN016','DP007','Airport Aeronautical Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN017','DP007','Airport Non Aeronautical Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN018','DP008','Finance Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN019','DP008','Accounting Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN020','DP008','Human Capital Business Partner Manager','','A');
+INSERT INTO MD_UNIT(KD_UNIT, KD_DEPARTEMEN, NM_UNIT, KETERANGAN, STATUS) VALUES('UN021','DP008','General Services Manager','','A');
+
+
+/*
+-----------------------------
+-- 5
+-----------------------------
+*/
+-- BEFORE UPDATED
+-- INSERT INTO MD_AKSES_MENU(KD_AKSES_MENU, NM_AKSES_MENU, LIST_MENU, STATUS, KETERANGAN) VALUES('AM000', 'ADMIN', 'MD0001, MD0002', 'A', '');
+-- INSERT INTO MD_AKSES_MENU(KD_AKSES_MENU, NM_AKSES_MENU, LIST_MENU, STATUS, KETERANGAN) VALUES('AM001', 'PEGAWAI', 'MD0001, MD0002', 'A', '');
+
+-- DATA FROM DATABASE
+INSERT INTO MD_AKSES_MENU VALUES('AM000','ADMIN','MD0001,MD0002,MD0003,MD0004,MD0005,MD0006,MD0007,MD0008,MD0009,MD0010,MD0011,MD0012,MD0013,MD0014,MD0015,MD0016,MD0017,MD0018,MD0019','A','');
+INSERT INTO MD_AKSES_MENU VALUES('AM001','PEGAWAI','MD0001,MD0002,MD0003,MD0004,MD0005','A','');
+/*
+-----------------------------
+-- 6
+-----------------------------
+*/
+-- BEFORE UPDATED
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('1','Andrehadiyana96@gmail.com','','1234567890','Andre Hadiyana','2','A','AM001','DP001','UN002');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('2','Shafira.balqis@ap1.co.id','','1234567890','Shafira Balqis','1','A','AM000','DP001','UN002');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('3','Budi.wiyono@ap1.co.id','','1234567890','Budi Wiyono','2','A','AM001','DP004','UN006');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('4','Dedi.cahyono@ap1.co.id','','1234567890','Dedy Sri Cahyono','2','A','AM001','DP004','UN006');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('5','Nurdiyanto@ap1.co.id','','1234567890','Nurdiyanto','2','A','AM001','DP001','UN001');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('6','andreankerja@gmail.com','','1234567890','Andrean Yunanda I.','2','A','AM001','DP001','UN001');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('7','Adhee.rizky@ap1.co.id','','1234567890','Adhee Muhammad Rizky','2','A','AM001','DP001','UN003');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('8','dirrakurnwt@gmail.com','','1234567890','Dirra Kurniawati','2','A','AM001','DP001','UN003');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('9','Dominicus.candra@ap1.co.id','','1234567890','Dominicus Argasari C.S.','2','A','AM001','DP005','UN007');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('10','Yahya.nopianto@ap1.co.id','','1234567890','Yahya Nopianto','2','A','AM001','DP005','UN007');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('11','Yunita.utami@ap1.co.id','','1234567890','Yunita Setia Utami','2','A','AM001','DP005','UN008');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('12','Yosi.rosidah@ap1.co.id','','1234567890','Yosi Amrina Rosidah','2','A','AM001','DP005','UN008');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('13','Rafli.martias@ap1.co.id','','1234567890','Rafli Martias','2','A','AM001','DP005','UN009');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('14','Azwar.arfah@ap1.co.id','','1234567890','Azwar Arfah','2','A','AM001','DP005','UN009');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('15','Muhammad.abid@ap1.co.id','','1234567890','M. Chafid Islahul Abid','2','A','AM001','DP005','UN010');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('16','Wahyu.wardianshah@ap1.co.id','','1234567890','Wahyu Wardianshah','2','A','AM001','DP005','UN010');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('17','Doni.kurniawan@ap1.co.id','','1234567890','Doni Dwi Kurniawan','2','A','AM001','DP005','UN011');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('18','Frans.herdiansyah@ap1.co.id','','1234567890','Frans Dwi Herdiansyah','2','A','AM001','DP005','UN011');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('19','Pri.legowo@ap1.co.id','','1234567890','Pri Arip Legowo','2','A','AM001','DP005','UN012');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('20','Ida.widyastuti@ap1.co.id','','1234567890','Ida Ayu Wika Widyastuti','2','A','AM001','DP005','UN012');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('21','Nurul.mukharomah@ap1.co.id','','1234567890','Nurul Mukharomah','2','A','AM001','DP006','UN015');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('22','i.mandra@ap1.co.id','','1234567890','I Putu Nana Sugianta Mandra','2','A','AM001','DP006','UN015');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('23','Muhammad.wicaksono@ap1.co.id','','1234567890','Muhammad Arif Wicaksono','2','A','AM001','DP006','UN014');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('24','Eka.priyana@ap1.co.id','','1234567890','Eka Priyana','2','A','AM001','DP006','UN014');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('25','Aldila.kurnia@ap1.co.id','','1234567890','Aldila Kurnia','2','A','AM001','DP006','UN013');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('26','Ineswari.ayuningtiyas@ap1.co.id','','1234567890','Ineswari Syifa H.','2','A','AM001','DP006','UN013');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('27','Ersaandyfa00@gmail.com','','1234567890','Ersa Andyfa','2','A','AM001','DP007','UN016');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('28','Wendry.haryono@ap1.co.id','','1234567890','Wendry Haryono M.K','2','A','AM001','DP007','UN017');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('29','Syamsul.hudaya@ap1.co.id','','1234567890','Syamsul Hudaya','2','A','AM001','DP007','UN017');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('30','Crecentia.yudita@ap1.co.id','','1234567890','Crecentia Yudita','2','A','AM001','DP008','UN018');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('31','Shinta.utami@ap1.co.id','','1234567890','Shinta Kartika Utami','2','A','AM001','DP008','UN018');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('32','Ani.uswati@ap1.co.id','','1234567890','Ani Uswati','2','A','AM001','DP008','UN019');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('33','Samhita.cahyawati@ap1.co.id','','1234567890','Samhita Danarti Cahyawati','2','A','AM001','DP008','UN019');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('34','Rita.rohayati@ap1.co.id','','1234567890','Rita Rohayati','2','A','AM001','DP008','UN020');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('35','Aurum.fiskawati@ap1.co.id','','1234567890','Aurum Fiskawati','2','A','AM001','DP008','UN020');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('36','Yohanis.rumlus@ap1.co.id','','1234567890','Yohanis Rumlus','2','A','AM001','DP008','UN021');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('37','Prihati.lestari@ap1.co.id','','1234567890','Prihati Muji Lestari','2','A','AM001','DP008','UN021');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('38','Nurul.inayah@ap1.co.id','','1234567890','Nurul Inayah','2','A','AM001','DP008','UN021');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('39','Rahasty.amalia@ap1.co.id','','1234567890','Rahasty Amalia','2','A','AM001','DP002','UN004');
+-- INSERT INTO MD_USER(ID_USER, EMAIL, NO_HP, PASSWORD, NAMA, KD_AKSES, STATUS, KD_AKSES_MENU, KD_DEPARTEMEN, KD_UNIT) VALUES('40','Putu.nugraha@ap1.co.id','','1234567890','Putu Putri Nugraha','2','A','AM001','DP002','UN004');
+
+-- DATA FROM DATABASE
+INSERT INTO MD_USER VALUES(1,'Andrehadiyana96@gmail.com','','1234567890','Andre Hadiyana',1,'A','AM001','DP001','UN002','L','');
+INSERT INTO MD_USER VALUES(2,'Shafira.balqis@ap1.co.id','','1234567890','Shafira Balqis',1,'A','AM000','DP001','UN002','P','');
+INSERT INTO MD_USER VALUES(3,'Budi.wiyono@ap1.co.id','','1234567890','Budi Wiyono',2,'A','AM001','DP004','UN006','L','');
+INSERT INTO MD_USER VALUES(4,'Dedi.cahyono@ap1.co.id','','1234567890','Dedy Sri Cahyono',2,'A','AM001','DP004','UN006','L','');
+INSERT INTO MD_USER VALUES(5,'Nurdiyanto@ap1.co.id','','1234567890','Nurdiyanto',2,'A','AM001','DP001','UN001','L','');
+INSERT INTO MD_USER VALUES(6,'andreankerja@gmail.com','','1234567890','Andrean Yunanda I.',2,'A','AM001','DP001','UN001','L','');
+INSERT INTO MD_USER VALUES(7,'Adhee.rizky@ap1.co.id','','1234567890','Adhee Muhammad Rizky',2,'A','AM001','DP001','UN003','L','');
+INSERT INTO MD_USER VALUES(8,'dirrakurnwt@gmail.com','','1234567890','Dirra Kurniawati',2,'A','AM001','DP001','UN003','P','');
+INSERT INTO MD_USER VALUES(9,'Dominicus.candra@ap1.co.id','','1234567890','Dominicus Argasari C.S.',2,'A','AM001','DP005','UN007','P','');
+INSERT INTO MD_USER VALUES(10,'Yahya.nopianto@ap1.co.id','','1234567890','Yahya Nopianto',2,'A','AM001','DP005','UN007','L','');
+INSERT INTO MD_USER VALUES(11,'Yunita.utami@ap1.co.id','','1234567890','Yunita Setia Utami',2,'A','AM001','DP005','UN008','P','');
+INSERT INTO MD_USER VALUES(12,'Yosi.rosidah@ap1.co.id','','1234567890','Yosi Amrina Rosidah',2,'A','AM001','DP005','UN008','P','');
+INSERT INTO MD_USER VALUES(13,'Rafli.martias@ap1.co.id','','1234567890','Rafli Martias',2,'A','AM001','DP005','UN009','L','');
+INSERT INTO MD_USER VALUES(14,'Azwar.arfah@ap1.co.id','','1234567890','Azwar Arfah',2,'A','AM001','DP005','UN009','L','');
+INSERT INTO MD_USER VALUES(15,'Muhammad.abid@ap1.co.id','','1234567890','M. Chafid Islahul Abid',2,'A','AM001','DP005','UN010','L','');
+INSERT INTO MD_USER VALUES(16,'Wahyu.wardianshah@ap1.co.id','','1234567890','Wahyu Wardianshah',2,'A','AM001','DP005','UN010','L','');
+INSERT INTO MD_USER VALUES(17,'Doni.kurniawan@ap1.co.id','','1234567890','Doni Dwi Kurniawan',2,'A','AM001','DP005','UN011','L','');
+INSERT INTO MD_USER VALUES(18,'Frans.herdiansyah@ap1.co.id','','1234567890','Frans Dwi Herdiansyah',2,'A','AM001','DP005','UN011','L','');
+INSERT INTO MD_USER VALUES(19,'Pri.legowo@ap1.co.id','','1234567890','Pri Arip Legowo',2,'A','AM001','DP005','UN012','L','');
+INSERT INTO MD_USER VALUES(20,'Ida.widyastuti@ap1.co.id','','1234567890','Ida Ayu Wika Widyastuti',2,'A','AM001','DP005','UN012','P','');
+INSERT INTO MD_USER VALUES(21,'Nurul.mukharomah@ap1.co.id','','1234567890','Nurul Mukharomah',2,'A','AM001','DP006','UN015','P','');
+INSERT INTO MD_USER VALUES(22,'i.mandra@ap1.co.id','','1234567890','I Putu Nana Sugianta Mandra',2,'A','AM001','DP006','UN015','L','');
+INSERT INTO MD_USER VALUES(23,'Muhammad.wicaksono@ap1.co.id','','1234567890','Muhammad Arif Wicaksono',2,'A','AM001','DP006','UN014','L','');
+INSERT INTO MD_USER VALUES(24,'Eka.priyana@ap1.co.id','','1234567890','Eka Priyana',2,'A','AM001','DP006','UN014','L','');
+INSERT INTO MD_USER VALUES(25,'Aldila.kurnia@ap1.co.id','','1234567890','Aldila Kurnia',2,'A','AM001','DP006','UN013','P','');
+INSERT INTO MD_USER VALUES(26,'Ineswari.ayuningtiyas@ap1.co.id','','1234567890','Ineswari Syifa H.',2,'A','AM001','DP006','UN013','P','');
+INSERT INTO MD_USER VALUES(27,'Ersaandyfa00@gmail.com','','1234567890','Ersa Andyfa',2,'A','AM001','DP007','UN016','P','');
+INSERT INTO MD_USER VALUES(28,'Wendry.haryono@ap1.co.id','','1234567890','Wendry Haryono M.K',2,'A','AM001','DP007','UN017','L','');
+INSERT INTO MD_USER VALUES(29,'Syamsul.hudaya@ap1.co.id','','1234567890','Syamsul Hudaya',2,'A','AM001','DP007','UN017','L','');
+INSERT INTO MD_USER VALUES(30,'Crecentia.yudita@ap1.co.id','','1234567890','Crecentia Yudita',2,'A','AM001','DP008','UN018','P','');
+INSERT INTO MD_USER VALUES(31,'Shinta.utami@ap1.co.id','','1234567890','Shinta Kartika Utami',2,'A','AM001','DP008','UN018','P','');
+INSERT INTO MD_USER VALUES(32,'Ani.uswati@ap1.co.id','','1234567890','Ani Uswati',2,'A','AM001','DP008','UN019','P','');
+INSERT INTO MD_USER VALUES(33,'Samhita.cahyawati@ap1.co.id','','1234567890','Samhita Danarti Cahyawati',2,'A','AM001','DP008','UN019','P','');
+INSERT INTO MD_USER VALUES(34,'Rita.rohayati@ap1.co.id','','1234567890','Rita Rohayati',2,'A','AM001','DP008','UN020','P','');
+INSERT INTO MD_USER VALUES(35,'Aurum.fiskawati@ap1.co.id','','1234567890','Aurum Fiskawati',2,'A','AM001','DP008','UN020','P','');
+INSERT INTO MD_USER VALUES(36,'Yohanis.rumlus@ap1.co.id','','1234567890','Yohanis Rumlus',2,'A','AM001','DP008','UN021','L','');
+INSERT INTO MD_USER VALUES(37,'Prihati.lestari@ap1.co.id','','1234567890','Prihati Muji Lestari',2,'A','AM001','DP008','UN021','P','');
+INSERT INTO MD_USER VALUES(38,'Nurul.inayah@ap1.co.id','','1234567890','Nurul Inayah',2,'A','AM001','DP008','UN021','P','');
+INSERT INTO MD_USER VALUES(39,'Rahasty.amalia@ap1.co.id','','1234567890','Rahasty Amalia',2,'A','AM001','DP002','UN004','P','');
+INSERT INTO MD_USER VALUES(40,'Putu.nugraha@ap1.co.id','','1234567890','Putu Putri Nugraha',2,'A','AM001','DP002','UN004','L','');
