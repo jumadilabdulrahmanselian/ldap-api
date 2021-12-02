@@ -13,5 +13,12 @@ enter_btn_auth: Masuk
 forget_password_auth: Lupa Password ?
 remember_auth: Ingat Saya
 
+err_username_auth: Masukkan Email atau Username
+err_password_auth: Masukkan Password
+err_empty_field_auth: Email dan Password tidak boleh kosong.
+err_no_json_auth: Maaf, Terjadi Kesalahan Saat Mengecek Data.
+err_no_auth_akses: Maaf, Email dan Password yang dimasukkan salah.
+suc_auth_akses: Anda Berhasil Login, Mohon Tunggu Sesaat Kami Akan Mengarahkan Anda Ke Dashboard
+
 # Dashboard Section
 dashboard: Masalah Buat Lo

@@ -48,7 +48,7 @@ class Database_core extends CI_Controller
     {
         try {
             $this->connect = new PDO($this->dsn, $this->user, $this->pass);
-            // set the PDO error mode to exception
+            // ngeset PDO error mode ke exception
             $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return true;
         } catch (PDOException $e) {

@@ -5,7 +5,7 @@
 <head>
     <base href="/">
     <meta charset="utf-8" />
-    <title>Metronic | Login Page 6</title>
+    <title><?= getLangKey('auth_title'); ?></title>
     <meta name="description" content="Login page example" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -41,6 +41,11 @@
     </style>
     <script>
         var BASE = '<?= baseUri(); ?>';
+        var _x = '<?= getLangKey('err_username_auth'); ?>';
+        var _y = '<?= getLangKey('err_password_auth'); ?>';
+        var _empty = '<?= getLangKey('err_empty_field_auth'); ?>';
+        var _nojson = '<?= getLangKey('err_no_json_auth'); ?>';
+        var _noauth = '<?= getLangKey('err_no_auth_akses'); ?>';
     </script>
 </head>
 <!--end::Head-->
@@ -90,10 +95,10 @@
                             </div>
                             <form class="form text-left" id="kt_login_signin_form">
                                 <div class="form-group py-2 m-0">
-                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="text" placeholder="<?= getLangKey('ph_email_auth'); ?>" name="username" autocomplete="off" />
+                                    <input style="background: transparent !important" autocomplete="off" class="form-control h-auto border-0 px-0 placeholder-dark-75" type="text" placeholder="<?= getLangKey('ph_email_auth'); ?>" name="username" autocomplete="off" />
                                 </div>
                                 <div class="form-group py-2 border-top m-0">
-                                    <input class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Password" placeholder="<?= getLangKey('ph_password_auth'); ?>" name="password" />
+                                    <input style="background: transparent !important" autocomplete="off" class="form-control h-auto border-0 px-0 placeholder-dark-75" type="Password" placeholder="<?= getLangKey('ph_password_auth'); ?>" name="password" />
                                 </div>
                                 <div class="form-group d-flex flex-wrap justify-content-between align-items-center mt-5">
                                     <div class="checkbox-inline">

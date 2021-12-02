@@ -28,14 +28,14 @@ var KTLogin = function () {
                         username: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Email or Username is required'
+                                    message: _x
                                 }
                             }
                         },
                         password: {
                             validators: {
                                 notEmpty: {
-                                    message: 'Password is required'
+                                    message: _y
                                 }
                             }
                         }
@@ -77,6 +77,8 @@ var KTLogin = function () {
                                         swal.fire({
                                             text: res.text,
                                             icon: "success",
+                                            showConfirmButton: false,
+                                            timer: 1500,
                                             buttonsStyling: false,
                                             confirmButtonText: "Ok, Ayo Masuk!",
                                             customClass: {
@@ -90,8 +92,10 @@ var KTLogin = function () {
                                         });
                                     } else {
                                         swal.fire({
-                                            text: "Maaf, Email dan Password yang dimasukkan salah.",
+                                            text: _noauth,
                                             icon: "error",
+                                            showConfirmButton: false,
+                                            timer: 1500,
                                             buttonsStyling: false,
                                             confirmButtonText: "Ok, Coba Lagi!",
                                             customClass: {
@@ -103,8 +107,10 @@ var KTLogin = function () {
                                     }
                                 }else{
                                     swal.fire({
-                                        text: "Maaf, Terjadi Kesalahan Saat Mengecek Data.",
+                                        text: _nojson,
                                         icon: "error",
+                                        showConfirmButton: false,
+                                        timer: 1500,
                                         buttonsStyling: false,
                                         confirmButtonText: "Ok, Coba Lagi!",
                                         customClass: {
@@ -122,9 +128,11 @@ var KTLogin = function () {
                     }
                     else {
                         swal.fire({
-                            text: "Email dan Password tidak boleh kosong.",
+                            text: _empty,
                             icon: "error",
                             buttonsStyling: false,
+                            showConfirmButton: false,
+                            timer: 1500,
                             confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn font-weight-bold btn-light-primary"

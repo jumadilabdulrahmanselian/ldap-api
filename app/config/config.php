@@ -56,7 +56,7 @@ $config['index_page'] = (REM_INDEX == TRUE) ? '' : 'index.php';
 | aku aja yang noob ya kan
 |
 */
-$config['multilang'] = TRUE;
+$config['multilang'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
