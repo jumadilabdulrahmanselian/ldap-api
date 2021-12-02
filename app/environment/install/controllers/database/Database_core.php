@@ -72,17 +72,47 @@ class Database_core extends CI_Controller
 
                 $readcreate = file_get_contents($create);
                 $sqlcreate = $readcreate;
-                $this->connect->exec($sqlcreate);
+                if (!empty($sqlcreate)) {
+                    $execCreate = $this->connect->exec($sqlcreate);
+                    if ($execCreate == 0) {
+                        $data['status'] = true;
+                        $data['msg'] = "Database Created successfully";
+                        $this->load->view('database/v_database_up', $data);
 
-                if (file_exists($insert)) {
-                    $readinsert = file_get_contents($insert);
-                    $this->connect->exec($readinsert);
+                        if (file_exists($insert)) {
+                            $readinsert = file_get_contents($insert);
+                            if (!empty($readinsert)) {
+                                $execInsert = $this->connect->exec($readinsert);
+                                if ($execInsert == 0) {
+                                    $data['status'] = true;
+                                    $data['msg'] = "Data Inserted successfully";
+                                    $this->load->view('database/v_database_up', $data);
+                                } else {
+                                    $data['status'] = false;
+                                    $data['msg'] = "Failed to insert data to database";
+                                    $this->load->view('database/v_database_up', $data);
+                                }
+                            } else {
+                                $data['status'] = false;
+                                $data['msg'] = "No insert query in file INSERT.SQL";
+                                $this->load->view('database/v_database_up', $data);
+                            }
+                        }
+                    } else {
+                        $data['status'] = false;
+                        $data['msg'] = "Failed to create database";
+                        $this->load->view('database/v_database_up', $data);
+                    }
+                } else {
+                    $data['status'] = false;
+                    $data['msg'] = "Failed to create database";
+                    $this->load->view('database/v_database_up', $data);
                 }
-            }
 
-            $data['status'] = true;
-            $data['msg'] = "Database Created successfully";
-            $this->load->view('database/v_database_up', $data);
+                // $data['status'] = true;
+                // $data['msg'] = "Database Created successfully";
+                // $this->load->view('database/v_database_up', $data);
+            }
         } catch (PDOException $e) {
             $data['status'] = false;
             $data['msg'] = "Failed to create database";

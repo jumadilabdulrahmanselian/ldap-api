@@ -32,7 +32,7 @@
     <link href="<?= assetsUri(); ?>css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
 
-    <link rel="shortcut icon" href="<?= assetsUri(); ?>media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="<?= assetsUri(); ?>media/logos/fav.ico" />
     <style>
         .bg-right {
             background: url('<?= assetsUri(); ?>media/bg.png') no-repeat fixed center 70px / 100% auto, fixed linear-gradient(to top, rgb(0, 0, 0), rgb(124 237 255));
