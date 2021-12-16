@@ -30,6 +30,7 @@ class Mail extends REST_Controller
     function send_post()
     {
         $AUTH_API_KEY = $this->input->get_request_header('AUTH-API-KEY');
+        $HOST = $this->input->get_request_header('Host'); // simplyneida
 
         if (in_array($AUTH_API_KEY, $this->CLIENT_ID)) {
 
