@@ -13,7 +13,7 @@
  * @link		http://alimstudio.com
  */
 
-class Pegawai_core extends CI_Controller
+class Pegawai_core extends REST_Controller
 {
 
 	var $per_page = 10;
@@ -35,21 +35,9 @@ class Pegawai_core extends CI_Controller
 		}
 	}
 
-	public function index()
+	public function index_get_post()
 	{
-		$this->home();
-	}
-
-	private function home($start = 0, $sort_by = 'add_time')
-	{
-		$data['title'] 		= getLangKey('dashboard');
-		$data['content'] 	= loadTemplate('dashboard/v_dashboard', '', 'admin', TRUE);
-		loadTemplate('layout', $data);
-	}
-
-	public function errors()
-	{
-		echo 'asaskjdalsjkd';
+		return '';
 	}
 }
 
