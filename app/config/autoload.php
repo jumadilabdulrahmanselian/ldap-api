@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('session', 'form_validation', 'api');
+$autoload['libraries'] = array('session', 'form_validation', 'api', 'database');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('session', 'form_validation', 'api');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'cookie', 'admin/asconfig', 'security');
+$autoload['helper'] = array('url', 'cookie', 'api/asconfig', 'security');
 
 /*
 | -------------------------------------------------------------------

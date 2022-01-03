@@ -333,9 +333,6 @@ class AS_URI extends CI_URI
 	 */
 	public function segment($n, $no_result = NULL)
 	{
-		if (!$this->config->item('multilang'))
-			$n--;
-
 		return isset($this->segments[$n]) ? $this->segments[$n] : $no_result;
 	}
 

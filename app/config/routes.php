@@ -76,16 +76,8 @@
 
 */
 
-
-
-
-if ($this->config->item('multilang')) {
-	$route['default_controller'] = "id/admin/auth";
-	$route['404_override'] 		 = "errors/e404";
-} else {
-	$route['default_controller'] = "admin";
-	$route['404_override'] 		 = "errors/e404";
-}
+$route['default_controller'] = "apis";
+$route['404_override'] 		 = "errors/e404";
 
 /* End of file routes.php */
 

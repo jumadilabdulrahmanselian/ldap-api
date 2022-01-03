@@ -102,172 +102,81 @@ class AS_Router extends CI_Router
 	//updated by webhelios
 	public function locate($segments)
 	{
-		$MULTILANG = $this->config->item('multilang');
-		// echo $MULTILANG;
-		if (!$MULTILANG) {
 
-			$this->module = '';
-			$this->directory = '';
-			$ext = $this->config->item('controller_suffix') . EXT;
+		$this->module = '';
+		$this->directory = '';
+		$ext = $this->config->item('controller_suffix') . EXT;
 
-			/* use module route if available */
-			if (isset($segments[0]) and $routes = Modules::parse_routes($segments[0], implode('/', $segments))) {
-				$segments = $routes;
-			}
-
-
-			/* get the segments array elements */
-			list($module, $directory, $controller) = array_pad($segments, 3, NULL);
-
-			/* check modules */
-			foreach (Modules::$locations as $location => $offset) {
-
-				/* module exists? */
-				if (is_dir($source = $location . $module . '/controllers/')) {
-
-					$this->module = $module;
-					$this->directory = $offset . $module . '/controllers/';
-
-
-					/* module sub-controller exists? */
-					if ($directory and is_file($source . ucfirst($directory) . $ext)) {
-						return array_slice($segments, 1);
-					}
-
-					/* module sub-directory exists? */
-					if ($directory and is_dir($source . $directory . '/')) {
-
-						$source = $source . $directory . '/';
-						$this->directory .= $directory . '/';
-
-						/* module sub-directory controller exists? */
-						if (is_file($source . ucfirst($directory) . $ext)) {
-							return array_slice($segments, 1);
-						}
-
-
-						/* module sub-directory sub-controller exists? */
-						if ($controller and is_file($source . ucfirst($controller) . $ext)) {
-							return array_slice($segments, 2);
-						}
-					}
-
-
-					/* module controller exists? */
-					if (is_file($source . ucfirst($module) . $ext)) {
-						return $segments;
-					}
-
-					die;
-				}
-			}
-
-			/* application controller exists? */
-			if (is_file(APPPATH . 'controllers/' . ucfirst($module) . $ext)) {
-				return $segments;
-			}
-
-			/* application sub-directory controller exists? */
-			if ($directory and is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($directory) . $ext)) {
-				$this->directory = $module . '/';
-				return array_slice($segments, 1);
-			}
-
-			/* application sub-directory default controller exists? */
-			if (is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($this->default_controller) . $ext)) {
-				$this->directory = $module . '/';
-				return array($this->default_controller);
-			}
-
-			return array('404');
-		} else {
-			$this->module = '';
-			$this->directory = '';
-			$ext = $this->config->item('controller_suffix') . EXT;
-
-			/* use module route if available */
-			if (isset($segments[0]) and $routes = Modules::parse_routes($segments[0], implode('/', $segments))) {
-				$segments = $routes;
-			}
-
-			if (isset($segments[0]) && $segments[0] == 'admin') {
-				$lang = 'en';
-			} else {
-				if (count($segments) >= 2) {
-					$lang = $segments[0];
-					array_shift($segments);
-				} else {
-					$res = explode('/', $this->default_controller);
-					$lang = $res[0];
-					$segments = array($res[1]);
-				}
-			}
-
-			/* get the segments array elements */
-			list($module, $directory, $controller) = array_pad($segments, 3, NULL);
-
-			/* check modules */
-			foreach (Modules::$locations as $location => $offset) {
-
-				/* module exists? */
-				if (is_dir($source = $location . $module . '/controllers/')) {
-
-					$this->module = $module;
-					$this->directory = $offset . $module . '/controllers/';
-
-
-					/* module sub-controller exists? */
-					if ($directory and is_file($source . ucfirst($directory) . $ext)) {
-						return array_slice($segments, 1);
-					}
-
-					/* module sub-directory exists? */
-					if ($directory and is_dir($source . $directory . '/')) {
-
-						$source = $source . $directory . '/';
-						$this->directory .= $directory . '/';
-
-						/* module sub-directory controller exists? */
-						if (is_file($source . ucfirst($directory) . $ext)) {
-							return array_slice($segments, 1);
-						}
-
-
-						/* module sub-directory sub-controller exists? */
-						if ($controller and is_file($source . ucfirst($controller) . $ext)) {
-							return array_slice($segments, 2);
-						}
-					}
-
-
-					/* module controller exists? */
-					if (is_file($source . ucfirst($module) . $ext)) {
-						return $segments;
-					}
-
-					die;
-				}
-			}
-
-			/* application controller exists? */
-			if (is_file(APPPATH . 'controllers/' . ucfirst($module) . $ext)) {
-				return $segments;
-			}
-
-			/* application sub-directory controller exists? */
-			if ($directory and is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($directory) . $ext)) {
-				$this->directory = $module . '/';
-				return array_slice($segments, 1);
-			}
-
-			/* application sub-directory default controller exists? */
-			if (is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($this->default_controller) . $ext)) {
-				$this->directory = $module . '/';
-				return array($this->default_controller);
-			}
-
-			return array('404');
+		/* use module route if available */
+		if (isset($segments[0]) and $routes = Modules::parse_routes($segments[0], implode('/', $segments))) {
+			$segments = $routes;
 		}
+
+
+		/* get the segments array elements */
+		list($module, $directory, $controller) = array_pad($segments, 3, NULL);
+
+		/* check modules */
+		foreach (Modules::$locations as $location => $offset) {
+
+			/* module exists? */
+			if (is_dir($source = $location . $module . '/controllers/')) {
+
+				$this->module = $module;
+				$this->directory = $offset . $module . '/controllers/';
+
+
+				/* module sub-controller exists? */
+				if ($directory and is_file($source . ucfirst($directory) . $ext)) {
+					return array_slice($segments, 1);
+				}
+
+				/* module sub-directory exists? */
+				if ($directory and is_dir($source . $directory . '/')) {
+
+					$source = $source . $directory . '/';
+					$this->directory .= $directory . '/';
+
+					/* module sub-directory controller exists? */
+					if (is_file($source . ucfirst($directory) . $ext)) {
+						return array_slice($segments, 1);
+					}
+
+
+					/* module sub-directory sub-controller exists? */
+					if ($controller and is_file($source . ucfirst($controller) . $ext)) {
+						return array_slice($segments, 2);
+					}
+				}
+
+
+				/* module controller exists? */
+				if (is_file($source . ucfirst($module) . $ext)) {
+					return $segments;
+				}
+
+				die;
+			}
+		}
+
+		/* application controller exists? */
+		if (is_file(APPPATH . 'controllers/' . ucfirst($module) . $ext)) {
+			return $segments;
+		}
+
+		/* application sub-directory controller exists? */
+		if ($directory and is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($directory) . $ext)) {
+			$this->directory = $module . '/';
+			return array_slice($segments, 1);
+		}
+
+		/* application sub-directory default controller exists? */
+		if (is_file(APPPATH . 'controllers/' . $module . '/' . ucfirst($this->default_controller) . $ext)) {
+			$this->directory = $module . '/';
+			return array($this->default_controller);
+		}
+
+		return array('404');
 	}
 	/* set module path */
 	protected function _set_module_path(&$_route)
